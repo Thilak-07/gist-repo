@@ -12,8 +12,6 @@ def bias_correction_model(y,q_map):
     bias_corrected_output['outputs'] = qm1
     return bias_corrected_output
 
-
-
 def save_as_pickled_object(obj, filepath):
     """
     This is a defensive way to write pickle.write, allowing for very large files on all platforms
@@ -25,9 +23,7 @@ def save_as_pickled_object(obj, filepath):
         for idx in range(0, n_bytes, max_bytes):
             f_out.write(bytes_out[idx:idx + max_bytes])
 
-
 def try_to_load_as_pickled_object_or_None(filepath):
-
     max_bytes = 2**31 - 1
     try:
         input_size = os.path.getsize(filepath)
